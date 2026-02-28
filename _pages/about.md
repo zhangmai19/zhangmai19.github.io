@@ -9,7 +9,7 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>Room 201, 2/F, Run Run Shaw Building</p>
+    <p>Room 201, Run Run Shaw Building</p>
     <p>The University of Hong Kong</p>
     <p>Hong Kong, China</p>
 
