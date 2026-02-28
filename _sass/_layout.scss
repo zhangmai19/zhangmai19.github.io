@@ -98,3 +98,7 @@ body.sticky-bottom-footer {
 #main-content {
   transition: opacity 0.5s ease;
 }
+
+.container[role="main"] {
+  padding-top: 6rem;
+}

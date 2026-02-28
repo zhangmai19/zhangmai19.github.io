@@ -15,21 +15,25 @@
     {% include head.liquid %}
   </head>
 
-  <!-- Body -->
-  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
-    <!-- Intro Overlay -->
-  <div id="intro-page">
-    <div class="intro-center">
-      <h1>
-        <span id="typewriter"></span>
-        <span class="cursor">|</span>
-      </h1>
-      <p class="enter-text">Click anywhere to enter</p>
-    </div>
-  </div>
+<body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
 
-  <!-- Main Content Wrapper -->
-  <div id="main-content" style="display:none; opacity:0;">
+  {% if page.url == '/' %}
+
+    <!-- Intro Overlay -->
+    <div id="intro-page">
+      <div class="intro-center">
+        <h1>
+          <span id="typewriter"></span>
+          <span class="cursor">|</span>
+        </h1>
+        <p class="enter-text">Click anywhere to enter</p>
+      </div>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <div id="main-content" style="display:none; opacity:0;">
+
+  {% endif %}
 
     <!-- Header -->
     {% include header.liquid %}
@@ -39,20 +43,16 @@
       {% if page.toc and page.toc.sidebar %}
         {% if page.toc.sidebar == 'right' %}
           <div class="row">
-            <!-- main content area -->
             <div class="col-sm-9">{{ content }}</div>
-            <!-- sidebar, which will move to the top on a small screen -->
             <div class="col-sm-3">
               <nav id="toc-sidebar" class="sticky-top"></nav>
             </div>
           </div>
         {% else %}
           <div class="row">
-            <!-- sidebar, which will move to the top on a small screen -->
             <div class="col-sm-3">
               <nav id="toc-sidebar" class="sticky-top"></nav>
             </div>
-            <!-- main content area -->
             <div class="col-sm-9">{{ content }}</div>
           </div>
         {% endif %}
@@ -64,12 +64,14 @@
     <!-- Footer -->
     {% include footer.liquid %}
 
-<!-- JavaScripts -->
+    <!-- JavaScripts -->
     {% include scripts.liquid %}
 
-  </div> <!-- close main-content -->
+  {% if page.url == '/' %}
+    </div> <!-- close main-content -->
+  {% endif %}
 
   <script src="{{ '/assets/js/intro.js' | relative_url }}"></script>
 
-  </body>
+</body>
 </html>
