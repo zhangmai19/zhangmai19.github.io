@@ -17,6 +17,20 @@
 
   <!-- Body -->
   <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+    <!-- Intro Overlay -->
+  <div id="intro-page">
+    <div class="intro-center">
+      <h1>
+        <span id="typewriter"></span>
+        <span class="cursor">|</span>
+      </h1>
+      <p class="enter-text">Click anywhere to enter</p>
+    </div>
+  </div>
+
+  <!-- Main Content Wrapper -->
+  <div id="main-content" style="display:none; opacity:0;">
+
     <!-- Header -->
     {% include header.liquid %}
 
@@ -50,7 +64,12 @@
     <!-- Footer -->
     {% include footer.liquid %}
 
-    <!-- JavaScripts -->
+<!-- JavaScripts -->
     {% include scripts.liquid %}
+
+  </div> <!-- close main-content -->
+
+  <script src="{{ '/assets/js/intro.js' | relative_url }}"></script>
+
   </body>
 </html>

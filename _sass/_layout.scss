@@ -56,3 +56,45 @@ body.sticky-bottom-footer {
 *****************************************************************************/
 
 // TODO: redefine projects layout.
+
+#intro-page {
+  position: fixed;
+  inset: 0;
+  background: var(--global-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+  cursor: pointer;
+}
+
+.intro-center {
+  text-align: center;
+}
+
+#typewriter {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.enter-text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 4px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+#main-content {
+  transition: opacity 0.5s ease;
+}
