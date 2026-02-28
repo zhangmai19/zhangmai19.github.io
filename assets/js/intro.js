@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  const texts = ["Create Explore Expand Conquer"];
+  const texts = [
+  "With humility, I seek to understand the world;",
+  "Je n’ai pas le temps."
+];
 
   const typewriterElement = document.getElementById("typewriter");
   const introPage = document.getElementById("intro-page");
