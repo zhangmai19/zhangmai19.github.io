@@ -231,3 +231,19 @@ github_repos:
 - **Layout:** The `layout:` field determines the template used. Common layouts: `post`, `page`, `about`, `cv`, `course`, `book-review`, `distill`.
 - **Drafts:** Put unpublished posts in `_drafts/` — they won't be built but will be tracked by git.
 - **Markdown:** All content is written in standard Markdown with MathJax for math (`$$...$$` for display, `$...$` for inline).
+
+## Syncing the Bookshelf
+
+The `/books/` page and the daily recommendation on the home page are powered by `_data/books.json`. To update them after changing your Notion reading list:
+
+1. In Notion, open your book database → **...** → **Export** → **Markdown & CSV**
+2. Save the CSV to `/mnt/d/hku/readinglist/Mai Reading List.csv` (or any path)
+3. Run the sync script:
+   ```
+   ./bin/sync-books.sh
+   ```
+   Or with a custom path:
+   ```
+   ./bin/sync-books.sh /mnt/d/hku/readinglist/MyBooks.csv
+   ```
+4. The script regenerates `books.json`, commits, and pushes. GitHub Pages deploys automatically.
