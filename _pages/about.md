@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='https://saasweb.hku.hk/student/2025phd.php#zhangmai'>HKU SAAS</a>. Chance favors only the prepared mind. 
+subtitle: <a href='https://saasweb.hku.hk/student/2025phd.php#zhangmai'>HKU SAAS</a>. Chance favors only the prepared mind.
 
 profile:
   align: right
@@ -29,7 +29,7 @@ latest_posts:
 
 I am interested in how we model uncertainty in complex systems.
 
-Currently, I am a Ph.D. student in Statistics at The University of Hong Kong. 
+Currently, I am a Ph.D. student in Statistics at The University of Hong Kong.
 My academic training bridges economics and statistics, which shapes the way I think about data, decision-making, and inference.
 
 Before joining HKU, I received my B.S. in Economics from Tsinghua University, with a minor in Statistics.

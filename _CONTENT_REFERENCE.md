@@ -9,17 +9,17 @@ Quick reference for adding content to your al-folio website. Each section shows 
 
 ```yaml
 ---
-layout: post                        # or: distill (Distill.pub style)
+layout: post # or: distill (Distill.pub style)
 title: Your Post Title
 description: A short description for previews
-date: 2026-07-31                     # publish date
-tags: [tag1, tag2]                   # optional, for related posts & archives
-categories: [cat1]                   # optional
-related_posts: true                  # optional, show related posts at bottom
-toc:                                 # optional, table of contents
+date: 2026-07-31 # publish date
+tags: [tag1, tag2] # optional, for related posts & archives
+categories: [cat1] # optional
+related_posts: true # optional, show related posts at bottom
+toc: # optional, table of contents
   beginning: true
-sidebar: left                        # optional, for distill layout
-external_redirect: https://...       # optional, redirect to external URL
+sidebar: left # optional, for distill layout
+external_redirect: https://... # optional, redirect to external URL
 ---
 ```
 
@@ -35,11 +35,11 @@ Distill-style posts use `<d-*>` tags in the body (see `_layouts/distill.liquid`)
 layout: page
 title: Project Title
 description: A one-line description
-img: /assets/img/your-image.jpg      # optional, background image on card
-importance: 1                         # display order (lower = first)
-category: work                        # category for grouping (or your own)
-giscus_comments: true                 # optional, enable comments
-related_publications: true            # optional, auto-link bib entries
+img: /assets/img/your-image.jpg # optional, background image on card
+importance: 1 # display order (lower = first)
+category: work # category for grouping (or your own)
+giscus_comments: true # optional, enable comments
+related_publications: true # optional, auto-link bib entries
 ---
 ```
 
@@ -57,7 +57,6 @@ date: 2026-07-31
 inline: true
 related_posts: false
 ---
-
 Your short announcement text here. Markdown works.
 ```
 
@@ -70,7 +69,6 @@ title: My New Paper Accepted
 date: 2026-07-31
 related_posts: false
 ---
-
 Longer content for the individual news page...
 ```
 
@@ -86,11 +84,11 @@ title: Course Name
 description: Brief course description
 instructor: Your Name
 year: 2026
-term: Fall                           # Fall, Spring, Summer
+term: Fall # Fall, Spring, Summer
 location: Room 301, Main Campus
 time: Tuesdays 10:00-11:30 AM
-course_id: unique-course-id          # required, used for internal linking
-schedule:                            # optional weekly schedule
+course_id: unique-course-id # required, used for internal linking
+schedule: # optional weekly schedule
   - week: 1
     date: Sept 5
     topic: Introduction
@@ -106,7 +104,6 @@ schedule:                            # optional weekly schedule
     description: More details
     materials: []
 ---
-
 ## Course Overview
 (rest of page in markdown...)
 ```
@@ -122,18 +119,18 @@ layout: book-review
 title: Book Title
 author: Author Name
 cover: /assets/img/book_covers/cover.jpg
-olid: OL12345678M                    # Open Library ID (auto-fetches cover)
-isbn: 1234567890                     # ISBN (auto-fetches cover)
-categories: [fiction, science]       # used for grouping
+olid: OL12345678M # Open Library ID (auto-fetches cover)
+isbn: 1234567890 # ISBN (auto-fetches cover)
+categories: [fiction, science] # used for grouping
 tags: [tag1, tag2]
 buy_link: https://amazon.com/...
-date: 2026-07-31                     # review date
+date: 2026-07-31 # review date
 started: 2026-06-01
 finished: 2026-07-15
-released: 2025                       # book publication year
-stars: 5                             # 1-5
-goodreads_review: 1234567890         # Goodreads review ID
-status: Finished                     # Finished, Reading, or To Read
+released: 2025 # book publication year
+stars: 5 # 1-5
+goodreads_review: 1234567890 # Goodreads review ID
+status: Finished # Finished, Reading, or To Read
 ---
 ```
 
@@ -209,7 +206,7 @@ cv:
 ```yaml
 cv_pdf: /assets/pdf/your_cv.pdf
 email: you@example.com
-scholar_userid: qc6CJjYAAAAJ        # Google Scholar ID
+scholar_userid: qc6CJjYAAAAJ # Google Scholar ID
 github_username: zhangmai19
 # Other available: twitter, linkedin, orcid, researchgate, etc.
 ```
