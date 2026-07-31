@@ -1,0 +1,187 @@
+<!-- Daily random book recommendation -->
+{% assign raw_books = site.data.books | jsonify %}
+
+<script type="application/json" id="daily-book-data">
+  {{ raw_books }}
+</script>
+
+<div id="daily-book" class="daily-book-card">
+  <div class="daily-book-header">
+    <span class="daily-book-icon">📖</span>
+    <span class="daily-book-label">{{ site.data.book_labels[site.active_lang].daily_pick | default: "Today's Pick" }}</span>
+  </div>
+  <div id="daily-book-content" class="daily-book-body">
+    <span class="daily-book-loading">loading...</span>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var container = document.getElementById('daily-book-content');
+    try {
+      var books = JSON.parse(document.getElementById('daily-book-data').textContent);
+      if (!books || !books.length) {
+        container.innerHTML = '<span class="daily-book-empty">No books in the reading list yet.</span>';
+        return;
+      }
+
+      // Deterministic pick based on today's date
+      var today = new Date();
+      var seed = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
+
+      var hash = 0;
+      for (var i = 0; i < seed.length; i++) {
+        hash = (hash << 5) - hash + seed.charCodeAt(i);
+        hash |= 0;
+      }
+      var idx = Math.abs(hash) % books.length;
+      var book = books[idx];
+
+      var statusClass = '';
+      switch (book.status) {
+        case 'Read':
+          statusClass = 'badge-read';
+          break;
+        case 'Currently reading':
+          statusClass = 'badge-reading';
+          break;
+        case 'Want to read':
+          statusClass = 'badge-want';
+          break;
+        default:
+          statusClass = 'badge-other';
+      }
+
+      var html = '<div class="daily-book-info">';
+      html +=
+        '<a class="daily-book-title" href="https://www.google.com/search?q=' +
+        encodeURIComponent(book.name + ' ' + book.author) +
+        '" target="_blank" rel="noopener">' +
+        escapeHtml(book.name) +
+        '</a>';
+      html += '<span class="daily-book-author">' + escapeHtml(book.author) + '</span>';
+      html += '<span class="daily-book-meta">';
+      if (book.score) html += '<span class="daily-book-score">' + escapeHtml(book.score) + '</span> ';
+      html += '<span class="daily-book-status ' + statusClass + '">' + escapeHtml(book.status) + '</span> ';
+      html += '<span class="daily-book-type">' + escapeHtml(book.type) + '</span>';
+      html += '</span>';
+      html += '</div>';
+      container.innerHTML = html;
+    } catch (e) {
+      container.innerHTML = '<span class="daily-book-empty">Could not load recommendation.</span>';
+    }
+  })();
+
+  function escapeHtml(str) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+</script>
+
+<style>
+  .daily-book-card {
+    margin: 1.5rem 0;
+    padding: 1rem 1.25rem;
+    border-left: 3px solid var(--global-theme-color, #7a4a8b);
+    border-radius: 8px;
+    background: var(--global-bg-color, #fff);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+  }
+  html[data-theme='dark'] .daily-book-card {
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
+  }
+  .daily-book-header {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.6rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--global-text-color-light, #888);
+  }
+  .daily-book-icon {
+    font-size: 1rem;
+  }
+  .daily-book-body {
+    min-height: 1.5rem;
+  }
+  .daily-book-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .daily-book-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--global-text-color, #333);
+    text-decoration: none;
+  }
+  .daily-book-title:hover {
+    color: var(--global-theme-color, #7a4a8b);
+    text-decoration: underline;
+  }
+  .daily-book-author {
+    font-size: 0.9rem;
+    color: var(--global-text-color-light, #666);
+  }
+  .daily-book-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    align-items: center;
+    font-size: 0.78rem;
+    margin-top: 0.15rem;
+  }
+  .daily-book-score {
+    font-weight: 500;
+  }
+  .daily-book-status {
+    padding: 0.1rem 0.5rem;
+    border-radius: 10px;
+    font-size: 0.72rem;
+    font-weight: 500;
+  }
+  .badge-read {
+    background: #e8f5e9;
+    color: #2e7d32;
+  }
+  html[data-theme='dark'] .badge-read {
+    background: #1b3a1b;
+    color: #66bb6a;
+  }
+  .badge-reading {
+    background: #e3f2fd;
+    color: #1565c0;
+  }
+  html[data-theme='dark'] .badge-reading {
+    background: #0d2b4a;
+    color: #42a5f5;
+  }
+  .badge-want {
+    background: #fff3e0;
+    color: #e65100;
+  }
+  html[data-theme='dark'] .badge-want {
+    background: #3e2200;
+    color: #ff9800;
+  }
+  .badge-other {
+    background: #f5f5f5;
+    color: #616161;
+  }
+  html[data-theme='dark'] .badge-other {
+    background: #2a2a2a;
+    color: #9e9e9e;
+  }
+  .daily-book-type {
+    color: var(--global-text-color-light, #999);
+    font-style: italic;
+  }
+  .daily-book-loading,
+  .daily-book-empty {
+    color: var(--global-text-color-light, #999);
+    font-size: 0.9rem;
+  }
+</style>

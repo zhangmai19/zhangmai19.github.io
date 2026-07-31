@@ -1,0 +1,303 @@
+[
+  {
+    "name": "时空旅行者的沙漏 时空旅行者の砂时计",
+    "type": "Detective Fiction",
+    "status": "Read",
+    "score": "⭐️⭐️⭐️",
+    "author": "方丈贵惠 ほうじょう きえ"
+  },
+  {
+    "name": "天才雷普利 The Talented Mr. Ripley",
+    "type": "Fiction",
+    "status": "Read",
+    "score": "⭐️⭐️⭐️⭐️",
+    "author": "帕特里西亚·海史密斯 Patricia Highsmith"
+  },
+  {
+    "name": "牧羊少年奇幻之旅 The Alchemist",
+    "type": "Philosophical Fiction",
+    "status": "Read",
+    "score": "⭐️⭐️⭐️⭐️⭐️",
+    "author": "保罗·科埃略 Paulo Coelho de Souza"
+  },
+  {
+    "name": "挽救计划 Project Hail Mary",
+    "type": "Science Fiction",
+    "status": "Read",
+    "score": "⭐️⭐️⭐️⭐️⭐️",
+    "author": "安迪·威尔 Andy Weir"
+  },
+  {
+    "name": "东方快车谋杀案 Murder on the Orient Express",
+    "type": "Detective Fiction",
+    "status": "Read",
+    "score": "⭐️⭐️⭐️",
+    "author": "阿加莎·克里斯蒂 Agatha Christie"
+  },
+  {
+    "name": "罗杰疑案 The Murder of Roger Ackroyd",
+    "type": "Detective Fiction",
+    "status": "Read",
+    "score": "⭐️⭐️⭐️",
+    "author": "阿加莎·克里斯蒂 Agatha Christie"
+  },
+  {
+    "name": "永恒的终结 The End of Eternity",
+    "type": "Science Fiction",
+    "status": "Read",
+    "score": "⭐️⭐️⭐️⭐️",
+    "author": "阿西莫夫 Исаáк Ю́дович Ази́мов"
+  },
+  {
+    "name": "终结的感觉 The sense of an ending",
+    "type": "Psychological Fiction",
+    "status": "Read",
+    "score": "⭐️⭐️⭐️⭐️⭐️",
+    "author": "朱利安·巴恩斯 Julian Barnes"
+  },
+  {
+    "name": "科学与方法 Science and Method",
+    "type": "Science",
+    "status": "Read",
+    "score": "⭐️⭐️⭐️⭐️⭐️",
+    "author": "亨利·庞加莱 Henri Poincare"
+  },
+  {
+    "name": "The History of Mathematics: An Introduction, Sixth Edition",
+    "type": "Mathematics",
+    "status": "Currently reading",
+    "score": "⭐️⭐️⭐️⭐️⭐️",
+    "author": "大卫·M·伯顿 David M. Burton"
+  },
+  {
+    "name": "法律的悖论",
+    "type": "Philosophy",
+    "status": "Currently reading",
+    "score": "⭐️⭐️⭐️⭐️",
+    "author": "罗翔"
+  },
+  {
+    "name": "Stochastic Differential Equations: An Introduction with Applications",
+    "type": "Mathematics",
+    "status": "Currently reading",
+    "score": "⭐️⭐️⭐️⭐️⭐️",
+    "author": "伯恩特·厄克森达尔 Bernt Øksendal"
+  },
+  {
+    "name": "午夜降临前抵达",
+    "type": "Travelogue",
+    "status": "Currently reading",
+    "score": "⭐️⭐️",
+    "author": "刘子超"
+  },
+  {
+    "name": "在路上 On the Road",
+    "type": "Travelogue",
+    "status": "Want to read",
+    "score": "",
+    "author": "杰克·凯鲁亚克 Jack Kerouac"
+  },
+  {
+    "name": "很久很久以前，在某一个地方…… むかしむかしあるところに、死体がありました。",
+    "type": "Detective Fiction",
+    "status": "Currently reading",
+    "score": "",
+    "author": "青柳碧人 あおやぎ あいと"
+  },
+  {
+    "name": "康熙的红票",
+    "type": "History",
+    "status": "Want to read",
+    "score": "",
+    "author": "孙立天"
+  },
+  {
+    "name": "好简单！我是德语入门学习书",
+    "type": "Language",
+    "status": "Do Not Finished",
+    "score": "TBD",
+    "author": "魏立言"
+  },
+  {
+    "name": "云中命案",
+    "type": "Detective Fiction",
+    "status": "Read",
+    "score": "⭐️⭐️",
+    "author": "阿加莎·克里斯蒂 Agatha Christie"
+  },
+  {
+    "name": "长安的荔枝",
+    "type": "History Fiction",
+    "status": "Read",
+    "score": "⭐️⭐️⭐️⭐️",
+    "author": "马伯庸"
+  },
+  {
+    "name": "财富、贫穷与政治 Wealth, Poverty and Politics: An International Perspective",
+    "type": "Economics",
+    "status": "Want to read",
+    "score": "",
+    "author": "托马斯·索维尔 Thomas Sowell"
+  },
+  {
+    "name": "刀锋",
+    "type": "Fiction",
+    "status": "Want to read",
+    "score": "",
+    "author": "威廉·萨默塞特·毛姆 William Somerset Maugham"
+  },
+  {
+    "name": "象棋的故事",
+    "type": "Fiction",
+    "status": "Read",
+    "score": "⭐️⭐️⭐️⭐️",
+    "author": "斯特凡·茨威格 Stefan Zweig"
+  },
+  {
+    "name": "地下室手记",
+    "type": "Philosophical Fiction",
+    "status": "Want to read",
+    "score": "",
+    "author": "费奥多尔·陀思妥耶夫斯基 Fyodor Dostoevsky"
+  },
+  {
+    "name": "过于喧嚣的孤独",
+    "type": "Fiction",
+    "status": "Currently reading",
+    "score": "⭐️⭐️⭐️⭐️⭐️",
+    "author": "博胡米尔·赫拉巴尔 Bohumil Hrabal"
+  },
+  {
+    "name": "螺丝在拧紧",
+    "type": "Horror Fiction",
+    "status": "Want to read",
+    "score": "",
+    "author": "亨利·詹姆斯 Henry James"
+  },
+  {
+    "name": "象之首",
+    "type": "Detective Fiction",
+    "status": "Read",
+    "score": "⭐️⭐️⭐️⭐️",
+    "author": "白井智之 しらい ともゆき"
+  },
+  {
+    "name": "冒姓琅琊",
+    "type": "History Fiction",
+    "status": "Currently reading",
+    "score": "",
+    "author": "东周公子南"
+  },
+  {
+    "name": "浮士德 Faust",
+    "type": "Drama",
+    "status": "Want to read",
+    "score": "",
+    "author": "约翰·沃尔夫冈·冯·歌德 Johann Wolfgang von Goethe"
+  },
+  {
+    "name": "无人逝去",
+    "type": "Detective Fiction",
+    "status": "Read",
+    "score": "⭐️⭐️⭐️⭐️",
+    "author": "白井智之 しらい ともゆき"
+  },
+  {
+    "name": "少年维特的烦恼",
+    "type": "Fiction",
+    "status": "Read",
+    "score": "⭐️⭐️⭐️⭐️⭐️",
+    "author": "约翰·沃尔夫冈·冯·歌德 Johann Wolfgang von Goethe"
+  },
+  {
+    "name": "查拉图斯特拉如是说",
+    "type": "Philosophy",
+    "status": "Read",
+    "score": "⭐️⭐️⭐️⭐️",
+    "author": "弗里德里希·尼采 Friedrich Nietzsche"
+  },
+  {
+    "name": "我是怪异，你是怪物",
+    "type": "Detective Fiction",
+    "status": "Read",
+    "score": "⭐️⭐️⭐️",
+    "author": "白井智之 しらい ともゆき"
+  },
+  {
+    "name": "不合时宜的考察",
+    "type": "Philosophy",
+    "status": "Read",
+    "score": "⭐️⭐️⭐️",
+    "author": "弗里德里希·尼采 Friedrich Nietzsche"
+  },
+  {
+    "name": "反抗的忧郁",
+    "type": "Fiction",
+    "status": "Currently reading",
+    "score": "⭐️⭐️⭐️⭐️⭐️",
+    "author": "克拉斯诺霍尔卡伊·拉斯洛 László Krasznahorkai"
+  },
+  {
+    "name": "无疾而终",
+    "type": "Fiction",
+    "status": "Currently reading",
+    "score": "",
+    "author": "曼努埃尔·普伊格 Manuel Puig"
+  },
+  {
+    "name": "骗子律师",
+    "type": "Thriller",
+    "status": "Want to read",
+    "score": "",
+    "author": "史蒂夫·卡瓦纳 Steve Cavanagh"
+  },
+  {
+    "name": "密室黄金时代的杀人",
+    "type": "Detective Fiction",
+    "status": "Want to read",
+    "score": "",
+    "author": "鸭崎暖炉 かもさき だんろ"
+  },
+  {
+    "name": "密室狂乱时代的孤岛事件",
+    "type": "Detective Fiction",
+    "status": "Want to read",
+    "score": "",
+    "author": "鸭崎暖炉 かもさき だんろ"
+  },
+  {
+    "name": "阿拉米斯——或对技术的爱",
+    "type": "Philosophy",
+    "status": "Want to read",
+    "score": "",
+    "author": "布鲁诺·拉图尔 Bruno Latour"
+  },
+  {
+    "name": "世界在前进",
+    "type": "Fiction",
+    "status": "Want to read",
+    "score": "",
+    "author": "克拉斯诺霍尔卡伊·拉斯洛 László Krasznahorkai"
+  },
+  {
+    "name": "蜘蛛女之吻",
+    "type": "Fiction",
+    "status": "Want to read",
+    "score": "",
+    "author": "曼努埃尔·普伊格 Manuel Puig"
+  },
+  {
+    "name": "抽象代数基础(第二版)",
+    "type": "Mathematics",
+    "status": "Currently reading",
+    "score": "⭐️⭐️⭐️⭐️⭐️",
+    "author": "丘维声"
+  },
+  {
+    "name": "The Only One Left",
+    "type": "Thriller",
+    "status": "Want to read",
+    "score": "",
+    "author": "Riley Sager"
+  }
+]
