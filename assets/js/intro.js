@@ -1,9 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-
-  const texts = [
-  "With humility, I seek to understand the world;",
-  "Je n’ai pas le temps."
-];
+  const texts = ["With humility, I seek to understand the world;", "Je n’ai pas le temps."];
 
   const typewriterElement = document.getElementById("typewriter");
   const introPage = document.getElementById("intro-page");
@@ -30,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   introPage.addEventListener("click", function () {
-
     introPage.style.opacity = "0";
 
     setTimeout(function () {
@@ -41,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(function () {
         mainContent.style.opacity = "1";
       }, 50);
-
     }, 500);
   });
 
