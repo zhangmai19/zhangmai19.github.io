@@ -82,6 +82,22 @@ cd /mnt/d/hku/website
 
 ---
 
+---
+
+## ✅ 已完成 (2026-07-31)
+
+- [x] 模板清理：删除 60+ demo 文件 + Einstein 数据，个性化 site config
+- [x] Bookshelf 静态书架：43 本书，搜索 + 状态筛选
+- [x] 首页每日随机推荐：date-seeded 确定性随机，亮/暗主题 badge
+- [x] 书架同步脚本：`bin/sync-books.sh`（CSV → JSON → commit → push）
+- [x] 工作目录搭建：`/mnt/d/hku/website/` + `TODO.md` + `_CONTENT_REFERENCE.md`
+- [x] Prettier 格式修复：8 个文件通过 `npx prettier --check`
+- [x] Deploy 修复：BibTeX parse error + 死链引用 + profiles.md
+
+详见 `journals/project-journal-2026-07-31.md`
+
+---
+
 ## 🔗 关键路径
 
 | 内容 | 文件 |
