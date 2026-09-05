@@ -1,0 +1,219 @@
+// A quiet opening page, using the same paper and ink as the main site.
+#intro-page {
+  display: none;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: var(--global-bg-color);
+  color: var(--global-text-color);
+  overflow-y: auto;
+  opacity: 1;
+  transition: opacity 360ms ease;
+
+  &[open] {
+    display: grid;
+  }
+
+  &.intro-leaving {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &::backdrop {
+    background: var(--global-bg-color);
+  }
+}
+
+body.intro-active {
+  overflow: hidden;
+}
+
+.intro-inner {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  width: min(100%, 1080px);
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.intro-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+.intro-wordmark {
+  font-family: var(--serif-font);
+  font-size: 1.45rem;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.04em;
+  margin: 0;
+  &:focus {
+    outline: none;
+  }
+}
+
+.intro-main {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  padding: clamp(2rem, 8vh, 6rem) 0;
+}
+
+.intro-preface {
+  margin-bottom: 2.5rem;
+}
+
+.intro-quote {
+  width: 100%;
+  max-width: 790px;
+  font-family: var(--serif-font);
+  font-size: clamp(2rem, 4.6vw, 4rem);
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -0.04em;
+  text-align: center;
+}
+
+.intro-line {
+  display: grid;
+  padding-right: 0.1em;
+}
+
+.intro-measure,
+.intro-typed {
+  grid-area: 1 / 1;
+}
+
+// Reserve the final line breaks so the composition stays still during typing.
+.intro-measure {
+  visibility: hidden;
+}
+
+.intro-french {
+  margin-top: 1.6rem;
+  font-size: clamp(1.3rem, 2.5vw, 2rem);
+  font-style: italic;
+  line-height: 1.5;
+  letter-spacing: -0.025em;
+  .intro-typed {
+    color: var(--global-theme-color);
+  }
+}
+
+.intro-typed.is-typing::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 0.8em;
+  margin-left: 0.08em;
+  background: var(--global-theme-color);
+  vertical-align: -0.02em;
+  animation: intro-caret 1s step-end infinite;
+}
+
+@keyframes intro-caret {
+  50% {
+    opacity: 0;
+  }
+}
+
+.intro-bottom {
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--global-divider-color);
+  text-align: center;
+}
+
+#intro-enter {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  min-height: 44px;
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--global-theme-color);
+  font-family: inherit;
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease;
+  span {
+    color: inherit;
+  }
+  &:hover {
+    background: var(--paper-inset);
+    border-color: var(--global-theme-color);
+  }
+}
+
+.intro-help {
+  margin: 0.65rem 0 0;
+  color: var(--global-text-color-light);
+  font-size: 0.65rem;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 575px) {
+  .intro-inner {
+    padding: 1.5rem;
+  }
+  .intro-top > .eyebrow {
+    font-size: 0.55rem;
+    letter-spacing: 0.09em;
+  }
+  .intro-preface {
+    font-size: 0.6rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #intro-page,
+  #intro-enter {
+    transition: none;
+  }
+}
+
+@media (max-height: 500px) and (min-width: 576px) {
+  .intro-inner {
+    padding: 1rem 1.5rem;
+  }
+  .intro-top {
+    padding-bottom: 0.6rem;
+  }
+  .intro-main {
+    padding: 1rem 0;
+  }
+  .intro-preface {
+    margin-bottom: 0.75rem;
+  }
+  .intro-quote {
+    font-size: 2rem;
+  }
+  .intro-french {
+    margin-top: 0.6rem;
+    font-size: 1.25rem;
+  }
+  .intro-bottom {
+    padding-top: 0.6rem;
+  }
+  .intro-help {
+    display: none;
+  }
+}

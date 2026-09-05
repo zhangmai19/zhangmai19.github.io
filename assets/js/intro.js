@@ -1,43 +1,84 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const texts = ["With humility, I seek to understand the world;", "Je n’ai pas le temps."];
+(() => {
+  const intro = document.getElementById("intro-page");
+  if (!intro || typeof intro.showModal !== "function" || window.location.hash) return;
 
-  const typewriterElement = document.getElementById("typewriter");
-  const introPage = document.getElementById("intro-page");
-  const mainContent = document.getElementById("main-content");
+  const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const lines = [...intro.querySelectorAll(".intro-line")].map((line) => ({
+    target: line.querySelector(".intro-typed"),
+    text: line.querySelector(".intro-measure").textContent,
+  }));
+  let typingTimer;
+  let closingTimer;
+  let leaving = false;
 
-  let textIndex = 0;
-  let charIndex = 0;
+  function finishTyping() {
+    clearTimeout(typingTimer);
+    lines.forEach(({ target, text }) => {
+      target.textContent = text;
+      target.classList.remove("is-typing");
+    });
+  }
 
-  function typeEffect() {
-    if (charIndex < texts[textIndex].length) {
-      typewriterElement.textContent += texts[textIndex].charAt(charIndex);
-      charIndex++;
-      setTimeout(typeEffect, 90);
+  function typeLine(lineIndex, characterIndex = 0) {
+    if (!intro.open || leaving) return;
+    const line = lines[lineIndex];
+    line.target.classList.add("is-typing");
+    line.target.textContent = line.text.slice(0, characterIndex);
+    if (characterIndex < line.text.length) {
+      const lastCharacter = line.text[characterIndex - 1];
+      const pause = /[;,]/.test(lastCharacter || "") ? 220 : 48;
+      typingTimer = setTimeout(() => typeLine(lineIndex, characterIndex + 1), pause);
     } else {
-      setTimeout(resetTypeEffect, 800);
+      line.target.classList.remove("is-typing");
+      if (lineIndex + 1 < lines.length) {
+        typingTimer = setTimeout(() => typeLine(lineIndex + 1), 500);
+      }
     }
   }
 
-  function resetTypeEffect() {
-    typewriterElement.textContent = "";
-    charIndex = 0;
-    textIndex = (textIndex + 1) % texts.length;
-    typeEffect();
+  function enter() {
+    if (!intro.open || leaving) return;
+    leaving = true;
+    clearTimeout(typingTimer);
+    lines.forEach(({ target }) => target.classList.remove("is-typing"));
+    if (motion.matches) {
+      intro.close();
+    } else {
+      intro.classList.add("intro-leaving");
+      closingTimer = setTimeout(() => intro.close(), 360);
+    }
   }
 
-  introPage.addEventListener("click", function () {
-    introPage.style.opacity = "0";
+  function handleMotionChange() {
+    if (motion.matches) {
+      finishTyping();
+      if (leaving && intro.open) intro.close();
+    }
+  }
 
-    setTimeout(function () {
-      introPage.style.display = "none";
-
-      mainContent.style.display = "block";
-
-      setTimeout(function () {
-        mainContent.style.opacity = "1";
-      }, 50);
-    }, 500);
+  intro.addEventListener("click", enter);
+  intro.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      enter();
+    }
   });
+  intro.addEventListener("cancel", (event) => {
+    event.preventDefault();
+    enter();
+  });
+  intro.addEventListener("close", () => {
+    clearTimeout(typingTimer);
+    clearTimeout(closingTimer);
+    motion.removeEventListener("change", handleMotionChange);
+    document.body.classList.remove("intro-active");
+    document.getElementById("main-content")?.focus({ preventScroll: true });
+  });
+  motion.addEventListener("change", handleMotionChange);
 
-  typeEffect();
-});
+  // A closed native dialog leaves the page accessible if scripting is unavailable.
+  intro.showModal();
+  document.body.classList.add("intro-active");
+  if (motion.matches) finishTyping();
+  else typingTimer = setTimeout(() => typeLine(0), 350);
+})();

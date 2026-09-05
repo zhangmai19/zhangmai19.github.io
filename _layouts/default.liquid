@@ -13,30 +13,37 @@
       <meta http-equiv="refresh" content="3; url={{ redirect }}">
     {% endif %}
     {% include head.liquid %}
+    <noscript>
+      <style>
+        #navbarNav {
+          display: block;
+        }
+        .navbar-toggler,
+        #search-toggle,
+        #light-toggle {
+          display: none;
+        }
+        #navbar {
+          position: static;
+        }
+        body.fixed-top-nav {
+          padding-top: 0;
+        }
+      </style>
+    </noscript>
   </head>
 
   <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
     {% if page.url == '/' %}
-      <!-- Intro Overlay -->
-      <div id="intro-page">
-        <div class="intro-center">
-          <h1>
-            <span id="typewriter"></span>
-            <span class="cursor">|</span>
-          </h1>
-          <p class="enter-text">Click anywhere to enter</p>
-        </div>
-      </div>
-
-      <!-- Main Content Wrapper -->
-      <div id="main-content" style="display:none; opacity:0;">
+      {% include intro.liquid %}
     {% endif %}
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
     <!-- Header -->
     {% include header.liquid %}
 
     <!-- Content -->
-    <div class="container mt-5" role="main">
+    <main id="main-content" class="container site-main" tabindex="-1">
       {% if page.toc and page.toc.sidebar %}
         {% if page.toc.sidebar == 'right' %}
           <div class="row">
@@ -56,19 +63,12 @@
       {% else %}
         {{ content }}
       {% endif %}
-    </div>
+    </main>
 
     <!-- Footer -->
     {% include footer.liquid %}
 
     <!-- JavaScripts -->
     {% include scripts.liquid %}
-
-    {% if page.url == '/' %}
-      </div>
-      <!-- close main-content -->
-    {% endif %}
-
-    <script src="{{ '/assets/js/intro.js' | relative_url }}"></script>
   </body>
 </html>

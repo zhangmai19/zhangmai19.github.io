@@ -1,8 +1,14 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 subtitle: <a href='https://saasweb.hku.hk/student/2025phd.php#zhangmai'>HKU SAAS</a>. Chance favors only the prepared mind.
+eyebrow: Statistics · The University of Hong Kong
+headline: Thinking about uncertainty.
+interests:
+  - Statistics
+  - Economics
+  - Decision-making
 
 profile:
   align: right
@@ -30,9 +36,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am interested in how we model uncertainty in complex systems.
-
-Currently, I am a Ph.D. student in Statistics at The University of Hong Kong.
+I am a Ph.D. student in Statistics at [The University of Hong Kong](https://saasweb.hku.hk/student/2025phd.php#zhangmai), interested in how we model uncertainty in complex systems.
 My academic training bridges economics and statistics, which shapes the way I think about data, decision-making, and inference.
 
 Before joining HKU, I received my B.S. in Economics from Tsinghua University, with a minor in Statistics.

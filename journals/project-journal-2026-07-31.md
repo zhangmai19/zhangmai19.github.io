@@ -16,6 +16,7 @@ metadata:
 ## 第一阶段：模板清理
 
 ### 删除模板内容
+
 - 30 篇 demo blog posts（formatting, math, code, images...）
 - 9 个 demo projects（project 1–9）
 - 3 条 demo 公告、2 门 demo 课程、1 本 demo 书评
@@ -25,6 +26,7 @@ metadata:
 - 总计：**82 files, +326 / -13,763**
 
 ### 替换为用户数据
+
 - `_config.yml`：姓名、描述、blog 名、scholar last_name、footer、keywords
 - `_data/repositories.yml`：zhangmai19 的真实 repo
 - `_data/socials.yml`：真实 email
@@ -32,12 +34,14 @@ metadata:
 - `_bibliography/papers.bib`：清空为注释模板
 
 ### 3 次 Deploy 失败修复
+
 1. `%` 注释不是合法 BibTeX → jekyll-scholar parse error → 清空 papers.bib
 2. `profiles.md` include 了已删除的 `about_einstein.md` → 修引用 + 隐藏 nav
 3. `cv.md` 引用已删除的 `example_pdf.pdf` → 移除死链
 4. 8 个文件 Prettier 格式问题 → `npx prettier --write` 全部修复
 
 ### 新增
+
 - `_CONTENT_REFERENCE.md`：10 种内容类型的 frontmatter 格式速查
 
 ---
@@ -45,6 +49,7 @@ metadata:
 ## 第二阶段：Bookshelf + 每日推荐
 
 ### Books 页面
+
 - 最初尝试 iframe 嵌入 Notion → Notion 返回 `X-Frame-Options: DENY`
 - 改为**静态书架**：从 `_data/books.json` 渲染卡片网格
 - 功能：搜索（实时过滤）、状态筛选（All / Read / Reading / Want to read）
@@ -52,6 +57,7 @@ metadata:
 - 亮色/暗色主题适配
 
 ### 每日随机推荐
+
 - 首页 about 页 content 和 news 之间插入 widget
 - JavaScript 用当日日期 hash 选书，同一天始终同一本
 - 显示：书名、作者、评分、状态 badge、类型
@@ -59,11 +65,13 @@ metadata:
 - `_layouts/about.liquid` 增加条件渲染 block
 
 ### 数据来源
+
 - 用户从 Notion 导出 `Mai Reading List260719.csv`
 - Python 脚本解析 43 本书 → `_data/books.json`
 - CSV 编码问题：BOM (`utf-8-sig`)、`\xa0` non-breaking spaces、`\r\n` 换行
 
 ### 同步脚本
+
 - `bin/sync-books.sh`：一键 CSV → JSON → commit → push
 - 默认路径 `/mnt/d/hku/readinglist/Mai Reading List.csv`
 - 支持自定义路径传参
@@ -82,17 +90,17 @@ metadata:
 
 ## Commits 记录
 
-| Hash | Message |
-|------|---------|
-| `21d5bff` | chore: remove al-folio template content, personalize site config |
-| `412b032` | fix: remove invalid BibTeX comments, leave papers.bib empty |
-| `3fba7b3` | fix: remove broken references to deleted template files |
-| `1365e7f` | style: run prettier to fix formatting across all files |
-| `338c24b` | feat: embed Notion bookshelf via iframe on /books/ |
-| `d476fed` | feat: add daily random book recommendation on home page |
-| `a7d3383` | fix: replace broken Notion iframe with static bookshelf page |
+| Hash      | Message                                                             |
+| --------- | ------------------------------------------------------------------- |
+| `21d5bff` | chore: remove al-folio template content, personalize site config    |
+| `412b032` | fix: remove invalid BibTeX comments, leave papers.bib empty         |
+| `3fba7b3` | fix: remove broken references to deleted template files             |
+| `1365e7f` | style: run prettier to fix formatting across all files              |
+| `338c24b` | feat: embed Notion bookshelf via iframe on /books/                  |
+| `d476fed` | feat: add daily random book recommendation on home page             |
+| `a7d3383` | fix: replace broken Notion iframe with static bookshelf page        |
 | `25fa9ff` | chore: add sync-books.sh script for one-command reading list update |
-| `1d067cb` | chore: add website TODO, restore original profile images |
+| `1d067cb` | chore: add website TODO, restore original profile images            |
 
 ---
 
@@ -105,6 +113,7 @@ metadata:
 ## 待办快照
 
 优先级的 3 项：
+
 1. 🔴 **Publications** — papers.bib 空白，网站第二重要页面
 2. 🔴 **CV** — 占位模板，没有真实简历数据
 3. 🟡 **About 页扩充** — 只有 4 行字，缺导师、研究方向、social links

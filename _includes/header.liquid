@@ -1,29 +1,28 @@
 <header>
   <!-- Nav Bar -->
-  <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
+  <nav
+    id="navbar"
+    class="navbar navbar-light navbar-expand-md {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}"
+    aria-label="Main navigation"
+  >
     <div class="container">
-      {% if page.permalink != '/' %}
-        <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
-          {% if site.title == 'blank' %}
-            {% if site.first_name %}
-              <span class="font-weight-bold">
-                {{- site.first_name -}}
-              </span>
-            {% endif %}
-            {% if site.middle_name %}
-              {{- site.middle_name -}}
-            {% endif %}
-            {% if site.last_name %}
-              {{- site.last_name -}}
-            {% endif %}
-          {% else %}
-            {{- site.title -}}
+      <a class="navbar-brand title" href="{{ '/' | relative_url }}" aria-label="Mai Zhang — home">
+        {% if site.title == 'blank' %}
+          {% if site.first_name %}
+            <span class="font-weight-bold">
+              {{- site.first_name -}}
+            </span>
           {% endif %}
-        </a>
-      {% elsif site.enable_navbar_social %}
-        <!-- Social Icons -->
-        <div class="navbar-brand social">{% social_links %}</div>
-      {% endif %}
+          {% if site.middle_name %}
+            {{- site.middle_name -}}
+          {% endif %}
+          {% if site.last_name %}
+            {{- site.last_name -}}
+          {% endif %}
+        {% else %}
+          {{- site.title -}}
+        {% endif %}
+      </a>
       <!-- Navbar Toggle -->
       <button
         class="navbar-toggler collapsed ml-auto"
@@ -120,15 +119,15 @@
           {% if site.search_enabled %}
             <!-- Search -->
             <li class="nav-item">
-              <button id="search-toggle" title="Search" onclick="openSearchModal()">
-                <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span>
+              <button id="search-toggle" title="Search (Ctrl K)" aria-label="Search this site" onclick="openSearchModal()">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
               </button>
             </li>
           {% endif %}
           {% if site.enable_darkmode %}
             <!-- Toogle theme mode -->
             <li class="toggle-container">
-              <button id="light-toggle" title="Change theme">
+              <button id="light-toggle" title="Change theme" aria-label="Change color theme">
                 <i class="fa-half-sun-moon" id="light-toggle-system"></i>
                 <i class="fa-solid fa-moon" id="light-toggle-dark"></i>
                 <i class="fa-solid fa-sun" id="light-toggle-light"></i>
