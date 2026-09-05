@@ -1,0 +1,35 @@
+<dialog id="intro-page" aria-labelledby="intro-heading" aria-describedby="intro-description">
+  <div class="intro-inner">
+    <div class="intro-top">
+      <h2 id="intro-heading" class="intro-wordmark" tabindex="-1" autofocus>
+        {{ site.first_name }}
+        {{ site.last_name }}
+      </h2>
+      <span class="eyebrow">Statistics · Hong Kong</span>
+    </div>
+
+    <div class="intro-main">
+      <p class="intro-preface eyebrow">A few words before we begin</p>
+      <p id="intro-description" class="sr-only">
+        With humility, I seek to understand the world;
+        <span lang="fr">Je n’ai pas le temps.</span>
+      </p>
+      <div class="intro-quote" aria-hidden="true">
+        <div class="intro-line">
+          <span class="intro-measure">With humility, I seek to understand the world;</span>
+          <span class="intro-typed"></span>
+        </div>
+        <div class="intro-line intro-french" lang="fr">
+          <span class="intro-measure">Je n’ai pas le temps.</span>
+          <span class="intro-typed"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="intro-bottom">
+      <button id="intro-enter" type="button">Enter website <span aria-hidden="true">↗</span></button>
+      <p class="intro-help">Click anywhere, or press Enter</p>
+    </div>
+  </div>
+</dialog>
+<script src="{{ '/assets/js/intro.js' | relative_url | bust_file_cache }}"></script>

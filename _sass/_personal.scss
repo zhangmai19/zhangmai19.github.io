@@ -128,6 +128,9 @@ input:focus-visible {
   padding-top: 4.5rem;
   padding-bottom: 1rem;
   min-height: calc(100vh - 240px);
+  &:focus {
+    outline: none;
+  }
 }
 
 .post-header {
@@ -228,7 +231,7 @@ input:focus-visible {
     height: auto;
     aspect-ratio: 4 / 5;
     object-fit: cover;
-    object-position: 53% center;
+    object-position: 65% center;
     border-radius: 2px;
   }
 }
