@@ -1,7 +1,7 @@
 # this file contains the social media links and usernames of the author
 # the socials will be displayed in the order they are defined here
-cv_pdf: /assets/pdf/your_cv.pdf # path to your CV PDF file
 email: zhangmai19@foxmail.com # your email address
+github_username: zhangmai19
 # scholar_userid: qc6CJjYAAAAJ # your Google Scholar ID
 # wechat_qr: # filename of your wechat qr-code saved as an image
 # custom_social: # can be any name here other than the ones already defined
